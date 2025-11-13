@@ -39,9 +39,13 @@ export default function Home() {
         { name: "Loom", icon: "🎥" }
       ],
       imageUrl: project1Image,
-      problem: "YouTube struggled to compete in the structured EdTech market dominated by dedicated learning platforms with limited course organization features.",
-      solution: "Developed a comprehensive framework to identify market opportunities, conducted user research with 50+ educators and students, and created detailed personas for the EdTech audience.",
-      outcomes: "Created a strategic roadmap for YouTube's entry into structured learning with validated user personas and a prioritized feature list.",
+      aboutProject: "As a hypothetical Product Manager of YouTube, I was tasked with the task to help YouTube grab a pie of the structured EdTech space currently dominated by Coursera, Udemy, EdX etc.",
+      objective: "The objective of the project is to just conduct the user interviews and create a journey map, understand their problems and to prioritize them",
+      approach: "Understanding EdTech Space → Goal setting → Objective of a User Interview → Hypothesis → User Survey & User Interview → User Persona Identification → Job To be Done (JTBD) → User Journey Mapping → Problem Identification → Prioritization",
+      problem: "YouTube struggled to compete in the structured EdTech market dominated by dedicated learning platforms with limited course organization features and certification options.",
+      solution: "Developed a comprehensive framework to identify market opportunities, conducted user research with 50+ educators and students, and created detailed personas for the EdTech audience. Instead of doing a traditional presentation, I tried a new storytelling approach with video documentation.",
+      outcomes: "Created a strategic roadmap for YouTube's entry into structured learning with validated user personas, prioritized problem statements, and a clear understanding of user needs in the EdTech space.",
+      learnings: "Learned the importance of user research in product decisions, the value of storytelling in presentations, and how to effectively prioritize features based on user feedback and business impact.",
     },
     {
       id: "2",
@@ -56,9 +60,13 @@ export default function Home() {
         { name: "Figma", icon: "🎨" }
       ],
       imageUrl: project2Image,
-      problem: "G2.com faced declining user engagement with low return visit rates and poor feature adoption among software buyers.",
-      solution: "Implemented personalized recommendation engine, improved search functionality, and redesigned the review submission flow based on competitor analysis.",
-      outcomes: "Increased user engagement by 35%, improved return visit rate by 42%, and boosted review submissions by 28%.",
+      aboutProject: "G2.com is a leading software marketplace and review platform. The challenge was to identify opportunities to increase user engagement and return visit rates.",
+      objective: "Analyze current user behavior, identify pain points, and propose solutions to improve overall user engagement metrics.",
+      approach: "Market Research → Competitor Analysis → User Flow Analysis → Pain Point Identification → Feature Ideation → Prioritization → Wireframing → Impact Assessment",
+      problem: "G2.com faced declining user engagement with low return visit rates and poor feature adoption among software buyers. Users found it difficult to discover relevant software and compare options effectively.",
+      solution: "Implemented personalized recommendation engine based on user behavior, improved search functionality with better filters, and redesigned the review submission flow to be more intuitive and rewarding.",
+      outcomes: "Increased user engagement by 35%, improved return visit rate by 42%, and boosted review submissions by 28%. The personalization features led to higher conversion rates for premium listings.",
+      learnings: "Understanding the importance of personalization in B2B platforms, the value of competitor analysis in feature development, and how small UX improvements can have significant impacts on engagement.",
     },
     {
       id: "3",
@@ -73,9 +81,13 @@ export default function Home() {
         { name: "Tableau", icon: "📊" }
       ],
       imageUrl: project3Image,
-      problem: "Enterprise customers struggled with complex analytics tools, resulting in low adoption and numerous support tickets.",
-      solution: "Redesigned dashboard with role-based views, automated insights, and customizable widgets based on extensive user testing.",
-      outcomes: "Achieved 85% user adoption, reduced support tickets by 60%, and improved customer satisfaction scores by 45%.",
+      aboutProject: "Enterprise customers were struggling with complex analytics tools, leading to low adoption rates and high support ticket volume. The goal was to create an intuitive, powerful analytics platform.",
+      objective: "Simplify the analytics experience while maintaining advanced capabilities for power users, reducing training time and support burden.",
+      approach: "User Interviews → Current State Analysis → Role-Based Requirements → Information Architecture → Dashboard Prototyping → User Testing → Iterative Refinement → A/B Testing",
+      problem: "Enterprise customers struggled with complex analytics tools, resulting in low adoption (45%), numerous support tickets, and underutilization of advanced features. Many users relied on manual Excel exports instead.",
+      solution: "Redesigned dashboard with role-based views, automated insights using AI, and customizable widgets based on extensive user testing. Implemented progressive disclosure to make advanced features discoverable without overwhelming new users.",
+      outcomes: "Achieved 85% user adoption, reduced support tickets by 60%, and improved customer satisfaction scores by 45%. Training time decreased from 2 weeks to 3 days.",
+      learnings: "The importance of progressive disclosure in complex applications, value of role-based design for enterprise software, and how AI-powered insights can drive feature adoption.",
     },
     {
       id: "4",
@@ -90,9 +102,13 @@ export default function Home() {
         { name: "Optimizely", icon: "🧪" }
       ],
       imageUrl: project4Image,
-      problem: "High cart abandonment rate of 68% due to complicated checkout process and unclear shipping information.",
-      solution: "Mapped entire customer journey, simplified checkout to 3 steps, added progress indicators, and implemented guest checkout option.",
-      outcomes: "Reduced cart abandonment to 32%, increased conversion rate by 54%, and improved average order value by 23%.",
+      aboutProject: "An e-commerce platform was experiencing high cart abandonment rates, resulting in significant revenue loss. The project focused on identifying and addressing friction points in the purchase journey.",
+      objective: "Reduce cart abandonment rate by at least 30% through systematic journey mapping and optimization.",
+      approach: "Analytics Review → Heatmap Analysis → User Session Recording → Pain Point Identification → Journey Mapping → A/B Test Design → Implementation → Measurement",
+      problem: "High cart abandonment rate of 68% due to complicated checkout process (8 steps), unclear shipping information, mandatory account creation, and lack of payment options. Mobile experience was particularly poor.",
+      solution: "Mapped entire customer journey, simplified checkout to 3 steps, added progress indicators, implemented guest checkout option, provided upfront shipping costs, and optimized mobile experience. Added trust signals and multiple payment options.",
+      outcomes: "Reduced cart abandonment to 32% (53% improvement), increased conversion rate by 54%, and improved average order value by 23%. Mobile conversion improved by 67%.",
+      learnings: "The critical importance of reducing friction in conversion funnels, the value of guest checkout options, and how transparency in pricing builds trust and drives conversions.",
     },
   ];
 

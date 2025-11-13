@@ -20,9 +20,13 @@ export default function ProjectModalExample() {
       { name: "Loom", icon: "🎥" }
     ],
     imageUrl: projectImage,
-    problem: "YouTube struggled to compete in the structured EdTech market dominated by dedicated learning platforms.",
-    solution: "Developed a comprehensive framework to identify market opportunities and user needs in the EdTech space.",
+    aboutProject: "As a hypothetical Product Manager of YouTube, I was tasked with the task to help YouTube grab a pie of the structured EdTech space currently dominated by Coursera, Udemy, EdX etc.",
+    objective: "The objective of the project is to just conduct the user interviews and create a journey map, understand their problems and to prioritize them",
+    approach: "Understanding EdTech Space → Goal setting → Objective of a User Interview → Hypothesis → User Survey & User Interview → User Persona Identification → Job To be Done (JTBD) → User Journey Mapping → Problem Identification → Prioritization",
+    problem: "YouTube struggled to compete in the structured EdTech market dominated by dedicated learning platforms with limited course organization features.",
+    solution: "Developed a comprehensive framework to identify market opportunities and user needs in the EdTech space with detailed personas and journey mapping.",
     outcomes: "Created a strategic roadmap for YouTube's entry into structured learning with validated user personas.",
+    learnings: "Learned the importance of user research and storytelling in product presentations.",
   };
 
   return (
