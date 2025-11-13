@@ -1,32 +1,37 @@
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { Link } from "wouter";
 
 interface ProjectCardProps {
   id: string;
   title: string;
-  role: string;
-  problem: string;
-  solution: string;
-  outcomes: string;
+  icon?: string;
+  summary: string;
+  skills: string[];
+  duration: string;
+  tools: Array<{ name: string; icon?: string }>;
   imageUrl?: string;
+  onClick?: () => void;
 }
 
 export default function ProjectCard({
   id,
   title,
-  role,
-  problem,
-  solution,
-  outcomes,
+  icon,
+  summary,
+  skills,
+  duration,
+  tools,
   imageUrl,
+  onClick,
 }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden hover-elevate active-elevate-2 transition-all h-full flex flex-col" data-testid={`card-project-${id}`}>
+    <Card 
+      className="overflow-hidden hover-elevate active-elevate-2 transition-all cursor-pointer" 
+      onClick={onClick}
+      data-testid={`card-project-${id}`}
+    >
       {imageUrl && (
-        <div className="aspect-video overflow-hidden">
+        <div className="aspect-video overflow-hidden relative">
           <img
             src={imageUrl}
             alt={title}
@@ -35,34 +40,53 @@ export default function ProjectCard({
           />
         </div>
       )}
-      <CardHeader className="flex-row items-start justify-between gap-4 space-y-0">
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold mb-1" data-testid={`text-project-title-${id}`}>{title}</h3>
-          <Badge variant="secondary" className="text-xs" data-testid={`badge-role-${id}`}>{role}</Badge>
+      <div className="p-6 space-y-4">
+        <div className="flex items-start gap-3">
+          {icon && (
+            <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center text-xl">
+              {icon}
+            </div>
+          )}
+          <h3 className="text-lg font-semibold flex-1" data-testid={`text-project-title-${id}`}>
+            {title}
+          </h3>
         </div>
-      </CardHeader>
-      <CardContent className="flex-1 space-y-4">
-        <div>
-          <h4 className="text-sm font-medium text-muted-foreground mb-1">Problem</h4>
-          <p className="text-sm line-clamp-2" data-testid={`text-problem-${id}`}>{problem}</p>
+        
+        <p className="text-sm text-muted-foreground" data-testid={`text-summary-${id}`}>
+          {summary}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {skills.map((skill, index) => (
+            <Badge 
+              key={index} 
+              variant="secondary" 
+              className="text-xs"
+              data-testid={`badge-skill-${id}-${index}`}
+            >
+              {skill}
+            </Badge>
+          ))}
         </div>
-        <div>
-          <h4 className="text-sm font-medium text-muted-foreground mb-1">Solution</h4>
-          <p className="text-sm line-clamp-2" data-testid={`text-solution-${id}`}>{solution}</p>
+
+        <div className="flex items-center justify-between pt-2 border-t">
+          <span className="text-sm text-muted-foreground" data-testid={`text-duration-${id}`}>
+            {duration}
+          </span>
+          <div className="flex items-center gap-2">
+            {tools.map((tool, index) => (
+              <div 
+                key={index}
+                className="flex items-center gap-1 text-xs"
+                data-testid={`tool-${id}-${index}`}
+              >
+                {tool.icon && <span>{tool.icon}</span>}
+                <span className="text-muted-foreground">{tool.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div>
-          <h4 className="text-sm font-medium text-muted-foreground mb-1">Outcomes</h4>
-          <p className="text-sm line-clamp-2" data-testid={`text-outcomes-${id}`}>{outcomes}</p>
-        </div>
-      </CardContent>
-      <CardFooter>
-        <Link href={`/projects/${id}`}>
-          <Button variant="ghost" size="sm" className="group" data-testid={`button-view-project-${id}`}>
-            View Case Study
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </Link>
-      </CardFooter>
+      </div>
     </Card>
   );
 }
