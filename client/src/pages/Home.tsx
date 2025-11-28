@@ -5,7 +5,7 @@ import BlogCard from "@/components/BlogCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Mail, Linkedin, Twitter, Github, MapPin, Briefcase, Sparkles, BookOpen, Code, Brain } from "lucide-react";
+import { ArrowRight, Mail, Linkedin, Twitter, Github, MapPin, Briefcase, Sparkles, BookOpen, Code, Brain, FileText, User, Layers, MessageSquare } from "lucide-react";
 import { Link } from "wouter";
 
 import heroImage from "@assets/generated_images/Professional_product_manager_headshot_238c3190.png";
@@ -147,9 +147,61 @@ export default function Home() {
     },
   ];
 
+  const portfolioTabs = [
+    {
+      title: "Resume",
+      description: "Explore my professional journey and experience",
+      icon: FileText,
+      href: "/resume",
+      color: "bg-blue-500/10 text-blue-500",
+      borderColor: "hover:border-blue-500/50",
+    },
+    {
+      title: "Blog",
+      description: "Read my thoughts on product management",
+      icon: BookOpen,
+      href: "/blog",
+      color: "bg-rose-500/10 text-rose-500",
+      borderColor: "hover:border-rose-500/50",
+    },
+    {
+      title: "Case Studies",
+      description: "Dive into my product success stories",
+      icon: Layers,
+      href: "/projects",
+      color: "bg-purple-500/10 text-purple-500",
+      borderColor: "hover:border-purple-500/50",
+    },
+    {
+      title: "About Me",
+      description: "Get to know the person behind the products",
+      icon: User,
+      href: "#about",
+      color: "bg-emerald-500/10 text-emerald-500",
+      borderColor: "hover:border-emerald-500/50",
+    },
+    {
+      title: "Contact",
+      description: "Let's connect and collaborate",
+      icon: MessageSquare,
+      href: "#contact",
+      color: "bg-amber-500/10 text-amber-500",
+      borderColor: "hover:border-amber-500/50",
+    },
+  ];
+
   const handleProjectClick = (project: any) => {
     setSelectedProject(project);
     setModalOpen(true);
+  };
+
+  const scrollToSection = (href: string) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   if (!mounted) return null;
@@ -166,14 +218,14 @@ export default function Home() {
                 <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-primary/20 ring-4 ring-primary/10">
                   <img
                     src={heroImage}
-                    alt="Alex Morgan"
+                    alt="Qudsia Noor"
                     className="w-full h-full object-cover"
                     data-testid="img-profile"
                   />
                 </div>
                 <div>
                   <h1 className="text-3xl font-bold mb-2" data-testid="text-name">
-                    Alex Morgan
+                    Qudsia Noor
                   </h1>
                   <p className="text-lg text-muted-foreground mb-4">
                     Senior Product Manager
@@ -310,8 +362,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Explore My Portfolio Section */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" data-testid="text-portfolio-heading">
+              Explore My Portfolio
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover my work, insights, and the journey that shaped me as a product manager
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {portfolioTabs.map((tab, index) => (
+              <Link key={index} href={tab.href}>
+                <Card 
+                  className={`p-6 h-full cursor-pointer transition-all duration-300 hover-elevate active-elevate-2 hover:shadow-lg ${tab.borderColor} border-2`}
+                  onClick={(e) => {
+                    if (tab.href.startsWith('#')) {
+                      e.preventDefault();
+                      scrollToSection(tab.href);
+                    }
+                  }}
+                  data-testid={`card-portfolio-${tab.title.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  <div className={`w-12 h-12 rounded-lg ${tab.color} flex items-center justify-center mb-4`}>
+                    <tab.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{tab.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{tab.description}</p>
+                  <div className="flex items-center text-primary text-sm font-medium group">
+                    Explore
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
-      <section id="about" className="py-16 md:py-24 bg-muted/30">
+      <section id="about" className="py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6" data-testid="text-about-heading">
@@ -341,7 +434,7 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold" data-testid="text-projects-heading">
@@ -367,7 +460,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold" data-testid="text-blog-heading">
@@ -389,7 +482,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-24">
+      <section id="contact" className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-semibold" data-testid="text-contact-heading">
