@@ -217,7 +217,7 @@ export default function Home() {
               <Card className="p-8 text-center space-y-6">
                 <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-primary/20 ring-4 ring-primary/10">
                   <img
-                    src={heroImage}
+                   // src={heroImage}
                     alt="Qudsia Noor"
                     className="w-full h-full object-cover"
                     data-testid="img-profile"

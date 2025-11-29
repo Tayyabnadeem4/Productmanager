@@ -8,6 +8,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
+    { label: "Home", href: "#home" },
     { label: "About Me", href: "#about" },
     { label: "Product Cases", href: "/projects" },
     { label: "Resume", href: "/resume" },
